@@ -1,0 +1,15 @@
+﻿@import '../Theme/_sass.scss';
+@import '../Mixin/_sass.scss';
+.speciesDetails{
+    .wiki{
+        border:solid 1px $primary-color;
+border-radius:10px;
+        padding:20px;
+        color: black;
+        font-size: 18px;
+        .title{
+            font-weight:bold;
+            font-size:24px;
+        }
+    }
+}

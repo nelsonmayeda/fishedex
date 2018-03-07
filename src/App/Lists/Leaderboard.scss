@@ -1,0 +1,101 @@
+﻿@import '../Theme/_sass.scss';
+@import '../Mixin/_sass.scss';
+.leaderboard  {
+    //line up everything including header banner
+    .banner{
+         @media (min-width: 768px)
+        {
+            .boxLeft{
+                    width:25%;
+            }
+        }
+    }
+    .rankings{
+        .banner{
+            margin-top:10px;
+            //Corresponds to bootstrap xs device size
+            @media (max-width: 767px)
+            {
+                //justify-content:center;
+                //flex-wrap:wrap;
+                @include flex-wrap(wrap);
+                @include justify-content(center);
+                .boxRight{
+                    //flex:0 0 auto;
+                    @include flex(0,0,auto);
+                    margin-left:0;
+                    margin-top:10px;
+                    width:100%;
+                }
+            }
+        }
+        //so boxleft doesn't shrink due to flex boxright
+        .boxLeft{
+            //flex:0 0 auto;
+            @include flex(0,0,auto);
+        }
+        .boxRight{
+            //overflow:hidden;//IE bug, flexbox won't wrap without this in IE
+        }
+        .boxEntries{
+            padding:5px;
+            //display:flex;
+            //flex-direction:row;
+            //justify-content:space-between;
+            //flex-wrap:wrap;
+            @include display-flex;
+            @include flex-direction(row);
+            @include justify-content(space-between);
+            @include flex-wrap(wrap);
+        }
+        
+        //flexbox justify-content:space-between; except last row
+        .boxEntries:after {
+            content: "";
+            //flex:1 1 auto;
+            @include flex(1,1,auto);
+        }
+        .btn
+        {
+            display:inline-block;
+            margin:2px;
+            width:24px;
+            height:16px;
+            padding:8px 12px;
+            border-radius: 4px;
+            position:relative;
+
+            .boxInfo{
+                display:none;
+            }
+            .boxLink{
+                position:absolute;
+                top:0;right:0;bottom:0;left:0;
+            }
+        }
+        //Corresponds to bootstrap sm device size
+        @media (min-width: 768px)
+        {
+            .btn{
+                 &:hover .boxInfo{
+                    display:inline-block;
+                    position:absolute;
+                    top:16px;left:0;
+                    vertical-align:middle;
+                    width:$ThumbnailResolution;
+                    height:$ThumbnailResolution;
+                    z-index:$z-overlay;
+                 }
+            }
+        }
+        //Corresponds to bootstrap xs device size
+        @media (max-width: 767px)
+        {
+            .btn
+            {
+              padding: 12px 12px;
+            }
+        }
+    }
+
+}

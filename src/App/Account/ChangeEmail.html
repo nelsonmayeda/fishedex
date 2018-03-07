@@ -1,0 +1,31 @@
+﻿<article class="article changeEmail">
+    <banner class="banner" item="vm.Model">
+    </banner><form class="ng-hide form" ng-show="!vm.Model.Changed" role="form" ng-submit="vm.changeEmail()">
+        <div class="form-header">
+            <h1>Change Email</h1>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="OldEmail">OldEmail</label>
+            <input type="email" class="form-control" id="OldEmail" name="OldEmail" placeholder="Old Email" ng-model="vm.Auth.email" ngReadOnly>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="NewEmail">NewEmail</label>
+            <input type="email" class="form-control" id="NewEmail" name="NewEmail" placeholder="New Email" ng-model="vm.Model.NewEmail" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" ng-model="vm.Model.Password" required>
+        </div>
+        <div class="form-group">
+            <input class="btn form-btn" type="submit" name="ChangeEmail" value="Change Email"></input>
+        </div>
+    </form><div class="ng-hide form form-success" ng-show="vm.Model.Changed">
+        <div class="form-header">
+            <h2>Email Changed</h2>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Confirm link sent to</label>
+            <span class="form-control">{{vm.Model.Email}}</span>
+        </div>
+    </div>
+</article>

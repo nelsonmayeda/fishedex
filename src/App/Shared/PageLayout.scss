@@ -1,0 +1,92 @@
+﻿@import '../Theme/_sass.scss';
+//now using sticky footer with fixed height footer
+//switched from sticky footer w/display table-row due to absolute positioning of angular views (relative main)
+
+html,body{
+    width:100%;
+    height: 100%;
+}
+.pageLayout{
+    width:100%;
+    height: 100%;
+    display:table;
+}
+.pageHeader {
+    width: 100%;
+    height:$navbar-height*2;
+    position:relative;//ie bug requires fixed children in relative container
+    display:table-row;
+}
+    .navbar{
+        left:0;right:0;
+        position:fixed;
+        z-index:$z-overlay
+    }
+    .navbar-header,.navbar-footer{
+        height:$navbar-height;//use of float on all items causes it to take up no space
+    }
+.pageContent{
+    width: 100%;
+    height: 100%;
+    display: table-row;
+}
+.pageFooter{
+    width: 100%;
+}
+.mainLayout{
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+.sidebar, .content{display:table-cell;}
+.sidebar{
+    width:$sidebar-width;
+    position:relative;
+    .menu{
+        width:$sidebar-width;
+        position:fixed;
+        top:$navbar-height*2;
+    }
+} 
+.article{
+    margin:0 auto;
+    height:auto;
+    overflow:hidden;//restrict article from affecting layout of 100% width on other elements
+
+}
+//Corresponds to bootstrap lg device size
+@media (min-width: 1200px) 
+{
+    .article {
+        width:800px;
+    }
+}
+//Corresponds to bootstrap md device size*/
+@media (min-width: 992px) and (max-width: 1199px)
+{
+    .article {
+        width:700px;
+    }
+}
+//Corresponds to bootstrap sm device size
+@media (min-width: 768px) and (max-width: 991px)
+{
+    .article {
+        width:500px;
+    }
+}
+//Corresponds to bootstrap xs device size
+@media (max-width: 767px)
+{.sidebar{
+    width:auto;
+}
+    .article {
+        width:100%;
+        margin:0;
+    }
+    .pageHeader{
+        height:$navbar-height;//navbar links turn into modal
+    }.navbar-footer{
+        height:0;
+    }
+}

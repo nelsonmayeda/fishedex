@@ -1,0 +1,25 @@
+﻿@import '../../Theme/_sass.scss';
+@import '../../Mixin/_sass.scss';
+.gallery{
+    margin:5px -5px 0 -5px;
+    display:block;
+    .box{
+        display:inline-block;
+        vertical-align:middle;
+        width:25%;
+        padding:5px;
+    }
+    .bigbox{
+        display:inline-block;
+        vertical-align:middle;
+        width:100%;
+        padding:5px;
+    }
+    //Corresponds to bootstrap xs device sizes
+    @media (max-width: 767px)
+    {
+        .box {
+            width: 50%;
+        }
+    }
+}

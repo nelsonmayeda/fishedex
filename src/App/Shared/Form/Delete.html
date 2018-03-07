@@ -1,0 +1,10 @@
+﻿<form ng-submit="vm.submit()" class="form" enctype="multipart/form-data" method="post">
+    <ng-transclude></ng-transclude>
+    <div class="form-group">
+        <div class="form-label">Are you sure you want to delete {{vm.item.Title}}?</div>
+    </div>
+    <div class="form-group">
+        <input type="submit" name="Delete" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+

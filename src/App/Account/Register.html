@@ -1,0 +1,27 @@
+﻿<article class="article register">
+    <banner class="banner" item="vm.Model">
+    </banner><form class="form" role="form" ng-submit="vm.register()">
+        <div class="form-header">
+            <h1>Register</h1>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Username">Username</label>
+            <input type="text" class="form-control" id="Username" name="Username" placeholder="Username" ng-model="vm.Model.userName" required autofocus>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Email">Email</label>
+            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email" ng-model="vm.Model.email">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" ng-model="vm.Model.password" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="ConfirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" ng-model="vm.Model.confirmPassword" required>
+        </div>
+        <div class="form-group">
+            <input class="btn form-btn" type="submit" name="Register" value="Register"></input>
+        </div>
+    </form>
+</article>

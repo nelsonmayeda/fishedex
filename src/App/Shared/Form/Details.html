@@ -1,0 +1,19 @@
+﻿<div class="form">
+    <ng-transclude></ng-transclude>
+    <div class="form-group">
+        <div class="form-label">Title</div>
+        <div class="form-control detailsTitle">{{vm.item.Title}}</div>
+    </div>
+    <div class="form-group">
+        <div class="form-label">Description</div>
+        <div class="form-control detailsTitle">{{vm.item.Description}}</div>
+    </div>
+    <div class="form-group">
+        <div class="form-label">User</div>
+        <a class="btn detailsUser" ng-href="Fish/Search?User={{vm.item.UserName}}">{{vm.item.UserName}}</a>
+    </div>
+    <div class="form-group">
+        <div class="form-label">Created</div>
+        <div class="form-control detailsCreated">{{vm.item.CreatedDate| date:'MMM dd yyyy hh:mm:ss a UTCZ'}}</div>
+    </div>
+</div>

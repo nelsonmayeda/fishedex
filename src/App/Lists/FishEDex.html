@@ -1,0 +1,41 @@
+﻿<div class="mainLayout fishedex">
+    <sidebar class="sidebar" locations="vm.Model.Locations" update="vm.updateFilters(value)"></sidebar>
+    <div class="content">
+        <article class="article">
+            <banner item="vm.Model" prefix="Lists">
+                <div class="note">Welcome {{vm.Model.UserName || 'Guest'}}</div>
+                <div class="ng-hide note" ng-show="vm.Model.UserName">You have caught {{vm.Model.Count}}/{{vm.Model.ComboList.length}} species</div>
+                <div class="ng-hide note" ng-show="!vm.Model.UserName">Users have caught {{vm.Model.Count}}/{{vm.Model.ComboList.length}} species</div>
+                <div class="ng-hide note" ng-show="!vm.Model.UserName">Log in to track your own progress</div>
+            </banner><div class="gallery numbered">
+                <a ng-repeat="item in vm.Model.ComboList| filter:vm.filterFunction | orderBy:vm.sortProperty():vm.sortIsReverse()" class="box Species" ng-class="{caught:item.Fish}" ng-href="Species/{{item.Species.Id}}">
+                    <div class="card square">
+                            <div class="flipper boxImg" ng-class="{flipped:item.Fish}">
+                                <div class="boxImg front">
+                                    <div class="anim" anim-ref="Species{{item.Species.Id}}">
+                                        <div class="card square">
+                                            <div class="boxImg valign">
+                                                <img class="img" ng-src="{{item.Species.TileURL}}" alt="{{item.Species.Title+' picture'}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="boxImg back">
+                                    <div class="anim" anim-ref="Fish{{item.Fish.Id}}">
+                                        <div class="card square">
+                                            <div class="boxImg valign">
+                                                <img class="img" ng-src="{{item.Fish.TileURL}}" alt="{{item.Fish.Title+' picture'}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="boxTitle">{{item.Species.Title}}</div>
+                        <div class="boxNote {{item.Species.Location | removeWhitespace}}">#{{item.Number}}</div>
+                        <div class="boxStar" ng-class="{filled:item.Fish}">&#9733;</div>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </div>
+</div>

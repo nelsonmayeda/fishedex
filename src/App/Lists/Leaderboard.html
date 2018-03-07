@@ -1,0 +1,36 @@
+﻿<article class="article leaderboard">
+    <banner item="vm.Model" prefix="Lists">
+        <div class="ng-hide note" ng-show="vm.Model.MyRank">Your rank is {{vm.Model.MyRank}}</div>
+        <div class="ng-hide note" ng-show="!vm.Model.MyRank">Log in to view your rank</div>
+    </banner>
+    <div class="rankings numbered">
+        <div class="banner" ng-repeat="entry in vm.Model.LeaderboardList">
+            <a class="boxLeft anim" anim-ref="Search{{entry.UserName |removeWhitespace}}" ng-href="Fish/Search?User={{entry.UserName}}">
+                <div class="card square">
+                    <div class="boxNote ColdFreshwater">#{{entry.Rank}}</div>
+                    <div class="boxText"><div class="child">{{entry.UserName}}</div></div>
+                    <div class="boxTitle">{{entry.CaughtCount}} / {{entry.CaughtList.length}}</div>
+                </div>
+            </a><div class="boxRight">
+                <div class="boxEntries">
+                    <div ng-repeat="species in entry.CaughtList" class="btn" ng-class="species.Caught?'btn-primary':'btn-default'">
+                        <a ng-href="Species/{{species.Id}}" class="boxLink"></a>
+                        <div class="boxInfo">
+                            <div class="card square">
+                                <div class="boxText">{{species.Title}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <a class="boxLeft">
+                <div ng-click="vm.LoadMore()" class="card square">
+                    <div class="dvLoading" ng-show="!vm.Loading.Active"></div>
+                    <loading class="ng-hide" ng-show="vm.Loading.Active"></loading>
+                </div>
+            </a>
+        </div>
+    </div>
+</article>

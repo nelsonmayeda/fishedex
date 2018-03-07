@@ -1,0 +1,9 @@
+﻿<ng-transclude>
+</ng-transclude><a ng-repeat="item in vm.list" ng-href="{{vm.prefix}}/{{item.Id}}" ng-class="vm.prefix" class="box anim" anim-ref="{{vm.prefix+item.Id}}">
+    <card class="card square" item="item" text="true" ></card>
+</a><a class="box">
+    <div ng-click="vm.more()" class="square card">
+        <div class="dvLoading" ng-show="!vm.Loading.Active"></div>
+        <loading class="ng-hide" ng-show="vm.Loading.Active"></loading>
+    </div>
+</a>

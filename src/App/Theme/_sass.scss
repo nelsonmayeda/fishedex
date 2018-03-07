@@ -1,0 +1,112 @@
+﻿//Blue Grey color swatch from google
+//0 lightest to 1000 darkest
+//"50": #ECEFF1,
+//"100": #CFD8DC,
+//"200": #B0BEC5,
+//"300": #90A4AE,
+//"400": #78909C,
+//"500": #607D8B,//blue-grey
+//"600": #546E7A,
+//"700": #455A64,
+//"800": #37474F,
+//"900": #263238,
+//"A100":,
+//"A200":,
+//"A400":,
+//"A700":,
+
+$primary-color-light:#ECEFF1;
+$primary-color:#CFD8DC;
+$primary-color-accent:#607D8B;
+$primary-color-dark:#455A64;
+
+//blue color swatch from google
+//0 lightest to 1000 darkest
+//"50": #E3F2FD,
+//"100": #BBDEFB,
+//"200": #90CAF9,
+//"300": #64B5F6,
+//"400": #42A5F5,
+//"500": #2196F3,//blue
+//"600": #1E88E5,
+//"700": #1976D2,
+//"800": #1565C0,
+//"900": #0D47A1,
+//"A100":#82B1FF,
+//"A200":#448AFF,
+//"A400":#2979FF,
+//"A700":#2962FF,
+
+$confirm-color:#2196F3;
+$confirm-color-accent:#2962FF;
+$confirm-color-dark:#1E88E5;
+
+//Amber color swatch from google
+//0 lightest to 1000 darkest
+//"50": #FFF8E1,
+//"100": #FFECB3,
+//"200": #FFE082,
+//"300": #FFD54F,
+//"400": #FFCA28,
+//"500": #FFC107,//Amber
+//"600": #FFB300,
+//"700": #FFA000,
+//"800": #FF8F00,
+//"900": #FF6F00,
+//"A100":#FFE57F,
+//"A200":#FFD740,
+//"A400":#FFC400,
+//"A700":#FFAB00,
+
+$warning-color:#D32F2F;
+$warning-color-accent:#E53935;
+$warning-color-dark:#C62828;
+//Red color swatch from google
+//0 lightest to 1000 darkest
+//"50": #FFEBEE,
+//"100": #FFCDD2,
+//"200": #EF9A9A,
+//"300": #E57373,
+//"400": #EF5350,
+//"500": #F44336,//red
+//"600": #E53935,
+//"700": #D32F2F,
+//"800": #C62828,
+//"900": #B71C1C,
+//"A100":#FF8A80,
+//"A200":#FF5252,
+//"A400":#FF1744,
+//"A700":#D50000,
+$danger-color:#D32F2F;
+$danger-color-accent:#E53935;
+$danger-color-dark:#C62828;
+//Amber color swatch from google
+//0 lightest to 1000 darkest
+//"50": #FFF8E1,
+//"100": #FFECB3,
+//"200": #FFE082,
+//"300": #FFD54F,
+//"400": #FFCA28,
+//"500": #FFC107,//Amber
+//"600": #FFB300,
+//"700": #FFA000,
+//"800": #FF8F00,
+//"900": #FF6F00,
+//"A100":#FFE57F,
+//"A200":#FFD740,
+//"A400":#FFC400,
+//"A700":#FFAB00,
+$star-color:#FFC107;
+$star-color-accent:#FFAB00;
+//fixed position element sizes
+$sidebar-width:200px;
+$navbar-height:50px;
+//z-index manager for fixed position
+$z-modal:9000;
+$z-overlay:8000;  
+$z-main    : 7000;
+//image resolutions
+$ThumbnailResolution:80px;  
+$TileResolution: 400px;
+//animate timing for flipper, element move, and view transition needs to be synced or else it will jump to position
+$Animate-timing:1s;

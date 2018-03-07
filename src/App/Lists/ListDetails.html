@@ -1,0 +1,14 @@
+﻿<article class="article listDetails">
+    <banner class="banner" item="vm.Model" prefix="Lists">
+        <div class="description">There are {{vm.Model.SpeciesList.length}} species.</div>
+        <a ng-show="vm.Model.CanEdit" class="btn btn-warning ng-hide" ng-href="Lists/{{vm.Model.Id}}/SpeciesCreate">
+            <span>Create Species</span>
+        </a><a ng-show="vm.Model.CanEdit" class="btn btn-warning ng-hide" ng-href="Lists/{{vm.Model.Id}}/Edit">
+            <span>Edit</span>
+        </a><a ng-show="vm.Model.CanEdit" class="btn btn-danger ng-hide" ng-href="Lists/{{vm.Model.Id}}/Delete">
+            <span>Delete</span>
+        </a>
+    </banner>
+    <gallery class="gallery numbered" list="vm.Model.SpeciesList" prefix="Species" more="vm.LoadMore()">
+    </gallery>
+</article>

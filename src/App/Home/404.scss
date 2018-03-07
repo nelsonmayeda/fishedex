@@ -1,0 +1,11 @@
+﻿@import '../Mixin/_sass.scss';
+.missing  {
+    margin-top:20px;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    .info{
+        font-size:48px;
+        font-weight:bold;
+    }
+}

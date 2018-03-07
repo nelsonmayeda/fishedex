@@ -1,0 +1,61 @@
+﻿@import '../../Theme/_sass.scss';
+@import '../../Mixin/_sass.scss';
+.banner{
+    @include flex(0,0,auto);
+    @include display-flex;
+    @include justify-content(space-between);
+    @include align-items(stretch);
+    width:100%;
+    .boxLeft{
+        width:33.3%;
+    }
+    .boxRight{
+        @include flex(1,1,auto);
+        @include display-flex;
+        @include flex-direction(column);
+        @include justify-content(center);
+        margin-left:10px;
+        vertical-align: middle;
+        border:solid 1px $primary-color;
+        border-radius:10px;
+    }
+    .boxImg{
+        overflow:hidden;
+    }
+    .boxText{
+        padding:20px;
+    }
+    .title{
+        font-weight:bold;
+        font-size:36px;
+    }
+    .description{
+        text-transform:capitalize;
+        font-size:24px;
+    }
+    .note{
+        font-size:24px;
+    }
+    @media (max-width: 767px)
+    {
+        .boxLeft,.boxRight{
+            width:50%;
+        }
+        .boxText{
+            padding:10px;
+        }
+        .title{
+            font-weight:bold;
+            font-size:24px;
+        }
+        .description{
+            font-size:18px;
+        }
+        .note{
+            font-size:16px;
+        }
+        .count{
+            font-size:16px;
+        }
+    }
+}

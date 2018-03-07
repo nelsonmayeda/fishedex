@@ -1,0 +1,18 @@
+﻿<form ng-submit="vm.submit()" class="form" enctype="multipart/form-data" method="post">
+    <ng-transclude></ng-transclude>
+    <div class="form-group">
+        <label class="form-label" for="Title">Title</label>
+        <input class="form-control inputTitle" name="Title" ng-model="vm.item.Title" type="text" autofocus>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="Description">Description</label>
+        <input class="form-control inputDescription" name="Description" ng-model="vm.item.Description" type="text">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="imageFile">Image File</label>
+        <input filereader="vm.handlefiles" class="form-control fileupload inputFile" name="imageFile" accept="image/*" type="file">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" name="Save" class="btn form-btn">
+    </div>
+</form>

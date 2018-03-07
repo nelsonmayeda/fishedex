@@ -1,0 +1,22 @@
+﻿@import '../../Theme/_sass.scss';
+.dvLoading{
+    position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+    text-align:center;
+    &:before{
+      display: block;
+      line-height:100px;
+        height:100px;
+        width:100px;
+        border:solid 2px $confirm-color;
+        border-radius:50%;
+        color:primary-color("400");
+        content:"Load More";
+    }
+    &:hover{
+        cursor:pointer;
+    }
+
+}

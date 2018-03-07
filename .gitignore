@@ -1,0 +1,30 @@
+# build 
+dev/
+dist/
+.sass-cache/
+
+# dependencies
+node_modules/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+*.log
+
+# compiled output
+*.map
+src/**/*.css
+
+# test
+test/e2e/output/screenshots
+test/e2e/output/videos/*
+!test/e2e/output/videos/website-1.gif
+
+# System Files
+.DS_Store
+Thumbs.db

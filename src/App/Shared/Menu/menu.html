@@ -1,0 +1,25 @@
+﻿<menu class="menu modal collapsed" id="menu" ng-class="{'collapsed':vm.toggleState.isToggled}">
+    <div class="toggle modal-background" ng-click="vm.toggleClick()"></div>
+    <div class="section">
+        <div class="sectionTitle">Show results for</div>
+        <div class="groupTitle">Filters</div>
+        <div class="menuLink" ng-click="vm.resetClick()" ng-class="{'active':vm.isReset()}">Reset</div>
+        <div class="groupTitle">Show</div>
+        <div class="menuLink" ng-click="vm.showClick('Me')" ng-class="{'active':vm.showIsActive('Me')}">Me</div>
+        <div class="menuLink" ng-click="vm.showClick('Everyone')" ng-class="{'active':vm.showIsActive('Everyone')}">Everyone</div>
+        <div class="groupTitle">Status</div>
+        <div class="menuLink" ng-click="vm.statusClick('Caught')" ng-class="{'active':vm.statusIsActive('Caught')}">Caught</div>
+        <div class="menuLink" ng-click="vm.statusClick('UnCaught')" ng-class="{'active':vm.statusIsActive('UnCaught')}">UnCaught</div>
+        <div class="groupTitle">Location</div>
+        <div ng-repeat="item in vm.locations | orderBy:item" class="menuLink" ng-click="vm.locationClick(item)" ng-class="{'active':vm.locationIsActive(item)}">
+            <span class="{{item.replace(' ','')}}">+</span>
+            <span>{{item}}</span>
+        </div>
+        <div class="groupTitle">Sort</div>
+        <div class="menuLink" ng-click="vm.sortClick('Alphabet')" ng-class="{'active':vm.sortIsActive('Alphabet')}">
+            <span ng-show="vm.sortIsActive('Alphabet') && !vm.sortIsReverse()" class="ng-hide down">&#9660;</span>
+            <span ng-show="vm.sortIsActive('Alphabet') && vm.sortIsReverse()" class="ng-hide up">&#9650;</span>
+            <span>Alphabet</span>
+        </div>
+    </div>
+</menu>

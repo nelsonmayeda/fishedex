@@ -1,0 +1,17 @@
+﻿@import '../../Theme/_sass.scss';
+@import '../../Mixin/_sass.scss';
+.flipper{
+	transform-style: preserve-3d;
+    .front,.back {
+	    backface-visibility: hidden;/*virtual visibility:hidden*/
+    }
+    .back {
+	    transform: rotateY(180deg);
+    }
+    &.flipped{
+	    transform: rotateY(180deg);
+        &:hover{
+	            transform: rotateY(0);
+        }
+    }
+}

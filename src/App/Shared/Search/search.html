@@ -1,0 +1,11 @@
+﻿<div class="toggle search-icon" ng-click="vm.searchToggle()">Search</div>
+<div ng-class="{'collapsed':vm.collapsed}" class="modal collapsed">
+    <div class="toggle modal-background" ng-click="vm.searchToggle()"></div>
+    <div class="collapsed modal" id="search">
+        <div class="toggle modal-background" collapse-target="search"></div>
+        <form class="search-form" role="search" id="searchForm" ng-submit="vm.submit()">
+            <input class="search-form-text" ng-model="vm.Model.Title" type="text" placeholder="Search by Title" value="" />
+            <button type="submit" class="search-form-submit"><img src="Content/Images/Search-50.png" class="search-form-image"/></button>
+        </form>
+    </div>
+</div>

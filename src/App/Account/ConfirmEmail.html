@@ -1,0 +1,23 @@
+﻿<article class="article confirmEmail">
+    <banner class="banner" item="vm.Model">
+    </banner><form class="ng-hide form" ng-show="!vm.Model.Confirmed" role="form" ng-submit="vm.confirmEmail()">
+        <div class="form-header">
+            <h1>Confirm your email</h1>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email</label>
+            <span class="form-control">{{vm.Model.Email}}</span>
+        </div>
+        <div class="form-group">
+            <button class="btn form-btn" type="submit">Confirm Email</button>
+        </div>
+    </form><div class="ng-hide form form-success" ng-show="vm.Model.Confirmed" >
+        <div class="form-header">
+            <h2>Email Confirmed</h2>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Confirmed Email</label>
+            <span class="form-control">{{vm.Model.Email}}</span>
+        </div>
+    </div>
+</article>

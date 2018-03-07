@@ -1,0 +1,52 @@
+﻿@import '../../Theme/_sass.scss';
+.form-msg{
+    font-size:24px;
+}
+.form{
+    display:block;
+    margin-top:10px;
+    padding:10px;
+   background:white;
+   border:solid 1px $primary-color;
+        border-radius:10px;
+    .form-header{
+        text-align:left;
+     font-size:24px;
+        font-weight:bold;
+    }
+    .form-group{
+        margin:10px 0;
+     text-align:left;
+    }
+    .form-label{
+        font-weight:bold;
+        font-size:16px;
+        line-height:29px;
+    }
+    .form-control{
+        padding:10px;
+        border-radius:3px;
+        border-bottom:solid 1px $primary-color;
+        font-weight:bold;
+        font-size:16px;
+        max-width:100%;
+        width:100%;
+    }
+    .form-footer{
+        font-size:20px;
+        font-weight:bold;
+    }
+    .form-btn{
+        width:100%;
+        margin:0;
+    }
+    .form-footer a{
+        text-decoration:none;
+        color: black;
+    }
+    input[type="checkbox"]{
+      width: 20px; 
+      height: 20px; 
+     vertical-align:middle;
+    }
+}

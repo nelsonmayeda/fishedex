@@ -1,0 +1,25 @@
+﻿<article class="article fishIndex">
+    <header class="banner">
+        <div class="anim boxLeft" anim-ref="Search{{vm.Model.Search |removeWhitespace}}">
+            <div class="card square">
+                <div class="boxText"><div class="child">{{vm.Model.Search}}</div></div>
+            </div>
+        </div><div class="boxRight boxText">
+            <div class="ng-hide" ng-show="!vm.Loading.Active && !vm.Loading.Error">
+                <div class="title bannerTitle">{{vm.Model.Title}}</div>
+                <div class="description bannerDescription">{{vm.Model.Description}}</div>
+                <div class="description">There are {{vm.Model.FishList.length}} fish.</div>
+                <a ng-show="vm.Model.CanEdit" class="ng-hide btn btn-warning" ng-href="Fish/Create">
+                    <span>Create Fish</span>
+                </a>
+            </div>
+            <div class="ng-hide loadingActive" ng-show="vm.Loading.Active">
+                <div class="title bannerMessage">{{vm.Loading.Message}}</div>
+            </div>
+            <div class="ng-hide loadingError" ng-show="vm.Loading.Error">
+                <div class="title bannerMessage">{{vm.Loading.Message}}</div>
+            </div>
+        </div>
+    </header><gallery class="gallery numbered" list="vm.Model.FishList" prefix="Fish" more="vm.LoadMore()">
+    </gallery>
+</article>

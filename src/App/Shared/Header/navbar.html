@@ -1,0 +1,43 @@
+﻿<nav class="navbar">
+    <div class="navbar-header">
+        <div class="navbar-left navbar-container">
+            <a class="navbar-brand" href="./">
+                <img src="Content/images/logo.png" alt="FishEDex logo">
+                <span class="brand-desc">FishEDex</span>
+            </a>
+        </div>
+        <button type="button" class="navbar-right hamburger" ng-click="vm.navToggle()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!--@*search*@-->
+        <div class="navbar-center search">
+            <search></search>
+        </div>       
+        <!-- @*Upload: if (Request.IsAuthenticated)*@ -->
+        <div ng-show="vm.authentication.isAuth" class="navbar-right navbar-item" >
+            <fileupload></fileupload>
+        </div>        
+        <!-- @*Upload: if (Request.IsAuthenticated)*@ -->
+        <div ng-show="vm.authentication.isAuth" class="navbar-right navbar-item">
+            <span class="btn logout" ng-click="vm.logout()" id="navLogout">Log Out</span>
+        </div>
+        <!-- @*Username: if (Request.IsAuthenticated)*@ -->
+        <div ng-show="vm.authentication.isAuth" class="ng-hide navbar-right navbar-item">
+            <a class="user" href="Account">{{vm.authentication.userName}}</a>
+        </div>
+        <!-- @*Login: if (!Request.IsAuthenticated)*@ -->
+        <div ng-show="!vm.authentication.isAuth" class="ng-hide navbar-right">
+            <a class="btn" href="Account/Login" id="navLogin">Sign in</a>
+        </div>
+    </div>
+    <div class="navbar-footer modal collapsed" ng-class="{'collapsed':vm.navState.isToggled}">
+        <bread></bread>
+        <div class="menutoggle ng-hide" ng-show="vm.menuState.isActive"  ng-click="vm.menuToggle()">
+            <ul class="menuitems">
+                <li class="item" ng-click="vm.navToggle()">Filters</li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,27 @@
+﻿<article class="article manageIndex">
+    <banner class="banner" item="vm.Model">
+        <div class="description username">
+            {{vm.Auth.userName}}
+        </div><div class="note email">
+            {{vm.Auth.email}}
+        </div>
+    </banner><div class="gallery numbered container ng-hide" ng-show="vm.Auth.isAuth">
+        <a class="box anim" anim-ref="Search{{vm.Auth.userName |removeWhitespace}}" href="Fish/Search?User={{vm.Auth.userName}}">
+            <div class="card square">
+                <div class="boxText"><div class="child">{{vm.Auth.userName}}'s Fish</div></div>
+            </div>
+        </a><a class="box" href="Account/ChangePassword">
+            <div class="card square">
+                <div class="boxText"><div class="child">Change Password</div></div>
+            </div>
+        </a><a class="box ng-hide" ng-show="vm.Auth.confirmed" href="Account/ChangeEmail">
+                <div class="card square">
+                    <div class="boxText"><div class="child">Change Email</div></div>
+                </div>
+        </a><div class="box link ng-hide" ng-show="!vm.Model.EmailConfirmed || !vm.Auth.confirmed" ng-click="vm.generateEmailConfirmationToken()">
+            <div class="card square">
+                <div class="boxText"><div class="child">Send Confirmation Email</div></div>
+            </div>
+        </div>
+    </div>
+</article>

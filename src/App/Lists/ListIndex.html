@@ -1,0 +1,10 @@
+﻿<article class="article listIndex">
+    <banner item="vm.Model" prefix="Lists">
+        <div class="description">There are {{vm.Model.CategoryList.length}} lists.</div>
+        <a class="btn btn-warning" ng-href="Lists/Create">
+            <span>Create List</span>
+        </a>
+    </banner>
+    <gallery class="gallery numbered" list="vm.Model.CategoryList" prefix="Lists" more="vm.LoadMore()">
+    </gallery>
+</article>

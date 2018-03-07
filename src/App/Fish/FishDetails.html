@@ -1,0 +1,13 @@
+﻿<article class="article fishDetails">
+    <banner item="vm.Model" prefix="Fish">
+        <a ng-show="vm.Model.CanEdit" class="btn btn-warning ng-hide" ng-href="Fish/{{vm.Model.Id}}/Edit">
+            <span>Edit</span>
+        </a><a ng-show="vm.Model.CanEdit" class="btn btn-danger ng-hide" ng-href="Fish/{{vm.Model.Id}}/Delete">
+            <span>Delete</span>
+        </a>
+    </banner><genericdetails item="vm.Model">
+                 <div class="form-header">
+                     <h1>Fish Details</h1>
+                 </div>
+    </genericdetails>
+</article>

@@ -1,0 +1,18 @@
+﻿<header class="banner">
+    <a ng-href="{{vm.item.ImageURL}}" class="anim boxLeft" anim-ref="{{vm.prefix+vm.item.Id}}">
+        <loading class="ng-hide card square" ng-show="vm.Loading.Active"></loading>
+        <card class="ng-hide card square" ng-show="!vm.Loading.Active" item="vm.item"></card>
+    </a><div class="boxRight boxText">
+        <div class="ng-hide" ng-show="!vm.Loading.Active && !vm.Loading.Error">
+            <div class="title bannerTitle">{{vm.item.Title}}</div>
+            <div class="description bannerDescription">{{vm.item.Description}}</div>
+            <ng-transclude></ng-transclude>
+        </div>
+        <div class="ng-hide loadingActive" ng-show="vm.Loading.Active">
+            <div class="title bannerMessage">{{vm.Loading.Message}}</div>
+        </div>
+        <div class="ng-hide loadingError" ng-show="vm.Loading.Error">
+            <div class="title bannerMessage">{{vm.Loading.Message}}</div>
+        </div>
+    </div>
+</header>

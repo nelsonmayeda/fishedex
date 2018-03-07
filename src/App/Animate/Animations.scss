@@ -1,0 +1,51 @@
+﻿@import '../Mixin/_sass.scss';
+@import '../Theme/_sass.scss';
+.relative-container{
+    position:relative;
+    width:100%;
+    height: 100%;
+    .view-transition{
+    height: 100%;
+    }
+    .view-leave {
+        position:absolute;top:0;right:0;bottom:0;left:0;
+        visibility: hidden;//Note: visibility hidden doesnt affect background, border
+        background:none;
+        border:none;
+        *{
+            visibility: hidden;
+            background:none;
+            border:none;
+        }
+    }
+    .view-leave.view-animating {
+        display:none;
+    }
+    .anim{
+        transition-property:width, height, transform;
+    /*note that this has to be synced with .flipper transition timing or move+flip will be off*/
+        transition-duration: $Animate-timing;
+        transition-timing-function: ease-in-out;
+    }
+    .anim-Leave, .anim-enter:not(.anim-animating){
+        visibility: hidden;//Note: visibility hidden doesnt affect background, border
+        background:none;
+        border:none;
+        *{
+            visibility: hidden;
+            background:none;
+            border:none;
+        }
+    }
+    .anim-animating {
+        z-index:$z-overlay;
+        position:absolute;
+    }
+    .anim-animating-active .flipper.flipped{
+        @include rotateY(0);
+    }
+    .flipper {
+    /*note that this has to be synced with .anim translate timing or move+flip will be off*/
+        transition: all ease-in-out $Animate-timing;
+    }
+}

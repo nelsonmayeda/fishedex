@@ -1,0 +1,16 @@
+﻿@import '../../Mixin/_sass.scss';
+@import '../../Theme/_sass.scss';
+modal{
+    .fullscreen{
+        z-index:$z-modal;
+        position:fixed;
+        top:0;right:0;bottom:0;left:0;
+        background:rgba(0,0,0,0.5);
+        @include display-flex;
+        @include justify-content(center);
+        .center{
+            @include align-self(center);
+            font-size:48px;font-weight:bold;color:white;
+        }
+    }
+}
