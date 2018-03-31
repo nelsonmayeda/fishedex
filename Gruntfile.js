@@ -268,6 +268,36 @@ module.exports = function(grunt) {
 					configFile: 'test/e2e/config/protractor.spec.conf.js'
 				}
 			},
+			account: {
+				options: {
+					keepAlive: true,
+					configFile: 'test/e2e/config/protractor.spec.account.conf.js'
+				}
+			},
+			fish: {
+				options: {
+					keepAlive: true,
+					configFile: 'test/e2e/config/protractor.spec.fish.conf.js'
+				}
+			},
+			home: {
+				options: {
+					keepAlive: true,
+					configFile: 'test/e2e/config/protractor.spec.home.conf.js'
+				}
+			},
+			lists: {
+				options: {
+					keepAlive: true,
+					configFile: 'test/e2e/config/protractor.spec.lists.conf.js'
+				}
+			},
+			species: {
+				options: {
+					keepAlive: true,
+					configFile: 'test/e2e/config/protractor.spec.species.conf.js'
+				}
+			},
 			video: {
 				options: {
 					keepAlive: true,
@@ -333,11 +363,17 @@ module.exports = function(grunt) {
 	grunt.registerTask('start-dev', ['build-dev','connect:dev', 'watch:dev']);
 	grunt.registerTask('start-dist', ['build-dist', 'connect:dist', 'watch:dist']);
 	
-	// test
+	// test unit
 	grunt.registerTask('test-unit', ['build-test', 'karma:test']);
-	grunt.registerTask('test-e2e', ['build-dev', 'connect:test','protractor:test']);
+	// test e2e
+	grunt.registerTask('test-e2e', ['build-dev', 'connect:dev','protractor:test']);
+	grunt.registerTask('test-e2e-fish', ['build-dev', 'connect:dev','protractor:fish']);
+	grunt.registerTask('test-e2e-home', ['build-dev', 'connect:dev','protractor:home']);
+	grunt.registerTask('test-e2e-lists', ['build-dev', 'connect:dev','protractor:lists']);
+	grunt.registerTask('test-e2e-species', ['build-dev', 'connect:dev','protractor:species']);
+	// test all
 	grunt.registerTask('test', ['test-unit', 'test-e2e']);
-	grunt.registerTask('video', ['build-dev', 'connect:test','protractor:video']);
-	grunt.registerTask('screenshot', ['build-dev', 'connect:test','protractor:screenshot']);
+	grunt.registerTask('video', ['build-dev', 'connect:dev','protractor:video']);
+	grunt.registerTask('screenshot', ['build-dev', 'connect:dev','protractor:screenshot']);
 
 };
