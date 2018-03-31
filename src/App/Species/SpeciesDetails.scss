@@ -3,13 +3,17 @@
 .speciesDetails{
     .wiki{
         border:solid 1px $primary-color;
-border-radius:10px;
+        border-radius:10px;
         padding:20px;
         color: black;
         font-size: 18px;
         .title{
             font-weight:bold;
             font-size:24px;
+        }
+        .url{
+            display:block;
+            word-break:break-word;
         }
     }
 }

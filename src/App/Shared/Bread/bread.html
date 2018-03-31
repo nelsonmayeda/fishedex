@@ -1,7 +1,7 @@
 ﻿<div class="bread">
     <div class="toggle modal-background" ng-click="vm.toggle()"></div>
     <ul class="trail">  
-        <li ng-repeat="item in vm.test" class="crumb ng-hide" ng-show="item.show" ng-class="{active:item.active}">
+        <li ng-repeat="item in vm.links" class="crumb ng-hide" ng-show="item.show" ng-class="{active:item.active}">
             <a class="link" ng-href="{{item.url}}">{{item.title}}</a>
         </li>    
     </ul>

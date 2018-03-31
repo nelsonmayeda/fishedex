@@ -12,7 +12,7 @@
         var vm = this;
         vm.state = toggleNavService.state;
         vm.crumbs = breadService.state;
-        vm.test = [];
+        vm.links = [];
         vm.toggle = function () {
             toggleNavService.toggle();
         };
@@ -22,25 +22,31 @@
             updateCrumbs();
         });
         function doStuff() {
-            vm.test = [];
-            vm.test.push(
+            vm.links = [];
+            vm.links.push(
                 {
-                    url: '/Lists/'+breadService.state.categoryId+'/FishEDex',
+                    //note relative no leading slash urls
+                    //needed for subdirectory hosting on github
+                    url: 'Lists/'+breadService.state.categoryId+'/FishEDex',
                     active: breadService.state.currentName.toLowerCase().includes('fishedex'),
                     title: 'FishEDex',
                     show:true
                 }
             );
-            vm.test.push(
+            vm.links.push(
                 {
-                    url: '/Lists/' + breadService.state.categoryId + '/Leaderboard',
+                    //note relative no leading slash urls
+                    //needed for subdirectory hosting on github
+                    url: 'Lists/' + breadService.state.categoryId + '/Leaderboard',
                     active: breadService.state.currentName.toLowerCase().includes('leaderboard'),
                     title: 'Leaderboard',
                     show: true
                 }
             );
-            vm.test.push(
+            vm.links.push(
                 {
+                    //note that absolute here will take into account the base href
+                    //needed for subdirectory hosting on github
                     url: $state.href($state.current.name, $state.params, { absolute: true }),
                     active: true,
                     title: breadService.state.currentName,
