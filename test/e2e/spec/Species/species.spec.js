@@ -25,7 +25,10 @@ describe('E2E TEST - Species:', function() {
 	var Id, Title, Description;
 	describe('Species Create', function() {
 		it('should create a species', function(done) {
-			browser.get('/Lists/197/SpeciesCreate');
+			browser.setLocation('/Lists/197/SpeciesCreate');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Lists/197/SpeciesCreate');
+			//loginHelper.waitForLogin();
 			
 			//since entire browser refreshes, have to wait for login to sync again
 			loginHelper.waitForLogin();
@@ -39,6 +42,8 @@ describe('E2E TEST - Species:', function() {
 			createPage.inputTitle.sendKeys(Title);
 			createPage.inputDescription.sendKeys(Description);
 			createPage.inputFile.sendKeys(file);
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
 			createPage.submit.click();
 			
 			//should auto redirect to details /Species/{Id}
@@ -62,7 +67,8 @@ describe('E2E TEST - Species:', function() {
 	});
 	describe('Species Index', function() {
 		it('should list newest species first', function(done) {
-			browser.get('/Lists/197/');
+			browser.setLocation('/Lists/197/');
+			
 			var indexPage = new indexPO();
 			
 			indexPage.firstTitle.getText().then(function(titleText){
@@ -74,8 +80,11 @@ describe('E2E TEST - Species:', function() {
 	});
 	describe('Species Edit', function() {
 		it('should change title and description', function(done) {
-			browser.get('/Species/'+Id+'/Edit');
-			
+			browser.setLocation('/Species/'+Id+'/Edit');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Species/'+Id+'/Edit');
+			//loginHelper.waitForLogin();
+
 			//since entire browser refreshes, have to wait for login to sync again
 			loginHelper.waitForLogin();
 			
@@ -87,14 +96,15 @@ describe('E2E TEST - Species:', function() {
 			
 			editPage.inputTitle.clear().then(function(){
 				editPage.inputTitle.sendKeys(newTitle);
-			}).then(function(){
-				editPage.inputDescription.clear().then(function(){
-					editPage.inputDescription.sendKeys(newDescription);
-				});
-			}).then(function(){
-				editPage.inputFile.sendKeys(newFile);
-				editPage.submit.click();
 			});
+			editPage.inputDescription.clear().then(function(){
+				editPage.inputDescription.sendKeys(newDescription);
+			});
+			editPage.inputFile.sendKeys(newFile);
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
+			editPage.submit.click();
+			
 			//should auto redirect to details /Species/{Id}
 			browser.wait(EC.not(EC.titleContains("Edit")), 5000);
 			var detailsPage = new detailsPO();
@@ -112,12 +122,17 @@ describe('E2E TEST - Species:', function() {
 	});
 	describe('Species Delete', function() {
 		it('should delete this species', function(done) {
-			browser.get('/Species/'+Id+'/Delete');
+			browser.setLocation('/Species/'+Id+'/Delete');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Species/'+Id+'/Delete');
+			//loginHelper.waitForLogin();
 			
 			//since entire browser refreshes, have to wait for login to sync again
 			loginHelper.waitForLogin();
 			
 			var deletePage = new deletePO();
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
 			deletePage.submit.click();
 			
 			//should auto redirect to index /Species

@@ -4,7 +4,7 @@ var loginHelper = function (){
 	var navbarPage = new navbarPO(); 
     this.waitForLogin = function(){
 		//verify that the login was succesful by checking if the logout button is displayed
-		browser.wait(EC.visibilityOf(navbarPage.navLogout), 1000);
+		browser.wait(EC.visibilityOf(navbarPage.navLogout), 5000);
 	};
     this.login = function(username,password){
 		var driver = browser.driver;

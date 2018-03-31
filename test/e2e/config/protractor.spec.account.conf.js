@@ -22,7 +22,7 @@ exports.config = {
 	},
 	stackTrace: false,
 	//paths relative to this config file site/test/e2e/config|spec
-	specs: ['../spec/**/*.spec.js'], 
+	specs: ['../spec/Account/account.spec.js'],
 	onPrepare: function () {
 		//for require relative paths
 		global.requirePO = function (relativePath) {
@@ -53,7 +53,7 @@ exports.config = {
  
      capsPromise.then(function (caps) {
         browserName = caps.get('browserName');
-        browserVersion = caps.get('version');
+        browserVersion = caps.get('version')+' - '+caps.get('chrome');
  
         testConfig = {
             reportTitle: 'E2E Test Results',

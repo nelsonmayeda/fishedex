@@ -4,7 +4,7 @@ var basePath =path.join(process.cwd(), '/test');
 exports.config = {
 	baseUrl: 'http://localhost:4444',
 	directConnect: true, //no selenium server, only use browser on this machine with no specific settings,
-	//NOTE that restartBrowserBetweenTests is intermittently buggy, open issue on github
+	//NOTE that restartBrowserBetweenTests is intermittently buggy, fails saying no valid session id. open issue on github
 	//restartBrowserBetweenTests: true,//with incognito: flush any remaining client logins,actions,etc
 	framework: 'jasmine2',
 	capabilities: {
@@ -22,7 +22,7 @@ exports.config = {
 	},
 	stackTrace: false,
 	//paths relative to this config file site/test/e2e/config|spec
-	specs: ['../spec/**/*.spec.js'], 
+	specs: ['../spec/Fish/fish.spec.js'],
 	onPrepare: function () {
 		//for require relative paths
 		global.requirePO = function (relativePath) {
@@ -53,7 +53,7 @@ exports.config = {
  
      capsPromise.then(function (caps) {
         browserName = caps.get('browserName');
-        browserVersion = caps.get('version');
+        browserVersion = caps.get('version')+' - '+caps.get('chrome');
  
         testConfig = {
             reportTitle: 'E2E Test Results',

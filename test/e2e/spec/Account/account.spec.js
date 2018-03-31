@@ -25,6 +25,8 @@ describe('E2E TEST - Account', function() {
 			registerPage.usernameField.sendKeys(username);
 			registerPage.passwordField.sendKeys(password);
 			registerPage.confirmPasswordField.sendKeys(password);
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
 			registerPage.submit.click();
 			//verify that the login was succesful by checking if the logout button is displayed
 			browser.wait(EC.visibilityOf(element(by.id("navLogout"))), 1000);
@@ -56,7 +58,11 @@ describe('E2E TEST - Account', function() {
 	describe('Manage with auth', function() {
 		it('should load without error', function() {
 			loginHelper.login(username,password);
-			browser.get('/Account');
+			
+			browser.setLocation('/Account');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Account');
+			//loginHelper.waitForLogin();
 			//check page message
 			var indexPage = new indexPO();
 			browser.wait(EC.invisibilityOf(indexPage.Loading), 1000);
@@ -68,12 +74,19 @@ describe('E2E TEST - Account', function() {
 	describe('Change Password', function() {
 		it('should change password', function() {
 			loginHelper.login(username,password);
-			browser.get('/Account/ChangePassword');
+			
+			browser.setLocation('/Account/ChangePassword');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Account/ChangePassword');
+			//loginHelper.waitForLogin();
+			//check page message
 			
 			var changePasswordPage = new changePasswordPO();
 			changePasswordPage.inputOldPassword.sendKeys(password);
 			changePasswordPage.inputNewPassword.sendKeys(newpassword);
 			changePasswordPage.inputConfirmPassword.sendKeys(newpassword);
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
 			changePasswordPage.submit.click();
 			
 			//verify that the login was succesful by checking if the logout button is displayed

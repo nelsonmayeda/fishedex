@@ -25,10 +25,10 @@ describe('E2E TEST - Lists:', function() {
 	var Id, Title, Description;
 	describe('Create', function() {
 		it('should create a list', function(done) {
-			browser.get('/Lists/Create');
-			
-			//since entire browser refreshes, have to wait for login to sync again
-			loginHelper.waitForLogin();
+			browser.setLocation('/Lists/Create');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Lists/Create');
+			//loginHelper.waitForLogin();
 			
 			var createPage = new createPO();
 			
@@ -39,6 +39,8 @@ describe('E2E TEST - Lists:', function() {
 			createPage.inputTitle.sendKeys(Title);
 			createPage.inputDescription.sendKeys(Description);
 			createPage.inputFile.sendKeys(file);
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
 			createPage.submit.click();
 			
 			//should auto redirect to details /Lists/{Id}
@@ -62,7 +64,8 @@ describe('E2E TEST - Lists:', function() {
 	});
 	describe('Index', function() {
 		it('should list newest list first', function(done) {
-			browser.get('/Lists/');
+			browser.setLocation('/Lists/');
+			
 			var indexPage = new indexPO();
 			
 			indexPage.firstTitle.getText().then(function(titleText){
@@ -74,7 +77,10 @@ describe('E2E TEST - Lists:', function() {
 	});
 	describe('Edit', function() {
 		it('should change title and description', function(done) {
-			browser.get('/Lists/'+Id+'/Edit');
+			browser.setLocation('/Lists/'+Id+'/Edit');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Lists/'+Id+'/Edit');
+			//loginHelper.waitForLogin();
 			
 			//since entire browser refreshes, have to wait for login to sync again
 			loginHelper.waitForLogin();
@@ -87,14 +93,15 @@ describe('E2E TEST - Lists:', function() {
 			
 			editPage.inputTitle.clear().then(function(){
 				editPage.inputTitle.sendKeys(newTitle);
-			}).then(function(){
-				editPage.inputDescription.clear().then(function(){
-					editPage.inputDescription.sendKeys(newDescription);
-				});
-			}).then(function(){
-				editPage.inputFile.sendKeys(newFile);
-				editPage.submit.click();
 			});
+			editPage.inputDescription.clear().then(function(){
+				editPage.inputDescription.sendKeys(newDescription);
+			});
+			editPage.inputFile.sendKeys(newFile);
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
+			editPage.submit.click();
+
 			//should auto redirect to details /Lists/{Id}
 			browser.wait(EC.not(EC.titleContains("Edit")), 5000);
 			var detailsPage = new detailsPO();
@@ -112,12 +119,17 @@ describe('E2E TEST - Lists:', function() {
 	});
 	describe('Delete', function() {
 		it('should delete this list', function(done) {
-			browser.get('/Lists/'+Id+'/Delete');
+			browser.setLocation('/Lists/'+Id+'/Delete');
+			//browser.get is now clearing cookies along with refresh, even while not in incognito mode
+			//browser.get('/Lists/'+Id+'/Delete');
+			//loginHelper.waitForLogin();
 			
 			//since entire browser refreshes, have to wait for login to sync again
 			loginHelper.waitForLogin();
 			
 			var deletePage = new deletePO();
+			//chromedriver bug, intermittently causes "Element is not clickable at point", many open issues on github
+			browser.sleep(1000);
 			deletePage.submit.click();
 			
 			//should auto redirect to index /Lists

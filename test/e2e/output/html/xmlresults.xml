@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites>
- <testsuite name="E2E TEST - Account" timestamp="2018-01-14T22:08:01" hostname="localhost" time="16.858" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+<testsuites disabled="0" errors="0" failures="0" tests="20" time="141381">
+ <testsuite name="E2E TEST - Account" timestamp="2018-03-30T16:28:12" hostname="localhost" time="18.406" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="E2E TEST - Account.Register" timestamp="2018-01-14T22:08:01" hostname="localhost" time="6.474" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Account.Register" name="should create an account" time="6.474" />
+ <testsuite name="E2E TEST - Account.Register" timestamp="2018-03-30T16:28:12" hostname="localhost" time="7.059" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Account.Register" name="should create an account" time="7.059" />
  </testsuite>
- <testsuite name="E2E TEST - Account.Login" timestamp="2018-01-14T22:08:07" hostname="localhost" time="2.286" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Account.Login" name="should login to that account" time="2.286" />
+ <testsuite name="E2E TEST - Account.Login" timestamp="2018-03-30T16:28:19" hostname="localhost" time="2.65" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Account.Login" name="should login to that account" time="2.65" />
  </testsuite>
- <testsuite name="E2E TEST - Account.Logout" timestamp="2018-01-14T22:08:10" hostname="localhost" time="1.68" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Account.Logout" name="should logout of that account" time="1.68" />
+ <testsuite name="E2E TEST - Account.Logout" timestamp="2018-03-30T16:28:22" hostname="localhost" time="1.715" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Account.Logout" name="should logout of that account" time="1.715" />
  </testsuite>
- <testsuite name="E2E TEST - Account.Manage with auth" timestamp="2018-01-14T22:08:11" hostname="localhost" time="2.242" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Account.Manage with auth" name="should load without error" time="2.242" />
+ <testsuite name="E2E TEST - Account.Manage with auth" timestamp="2018-03-30T16:28:24" hostname="localhost" time="1.988" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Account.Manage with auth" name="should load without error" time="1.988" />
  </testsuite>
- <testsuite name="E2E TEST - Account.Change Password" timestamp="2018-01-14T22:08:14" hostname="localhost" time="4.176" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Account.Change Password" name="should change password" time="4.16" />
+ <testsuite name="E2E TEST - Account.Change Password" timestamp="2018-03-30T16:28:26" hostname="localhost" time="4.994" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Account.Change Password" name="should change password" time="4.978" />
  </testsuite>
- <testsuite name="E2E TEST - Fish:" timestamp="2018-01-14T22:08:18" hostname="localhost" time="15.168" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="E2E TEST - Fish:" timestamp="2018-03-30T16:28:31" hostname="localhost" time="15.459" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="E2E TEST - Fish:.Create" timestamp="2018-01-14T22:08:18" hostname="localhost" time="5.346" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Fish:.Create" name="should create a fish" time="5.346" />
+ <testsuite name="E2E TEST - Fish:.Create" timestamp="2018-03-30T16:28:31" hostname="localhost" time="5.514" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Fish:.Create" name="should create a fish" time="5.514" />
  </testsuite>
- <testsuite name="E2E TEST - Fish:.Index" timestamp="2018-01-14T22:08:23" hostname="localhost" time="3.672" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Fish:.Index" name="should list newest fish first" time="3.656" />
+ <testsuite name="E2E TEST - Fish:.Index" timestamp="2018-03-30T16:28:36" hostname="localhost" time="2.418" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Fish:.Index" name="should list newest fish first" time="2.417" />
  </testsuite>
- <testsuite name="E2E TEST - Fish:.Edit" timestamp="2018-01-14T22:08:27" hostname="localhost" time="3.634" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Fish:.Edit" name="should change title and description" time="3.634" />
+ <testsuite name="E2E TEST - Fish:.Edit" timestamp="2018-03-30T16:28:39" hostname="localhost" time="4.517" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Fish:.Edit" name="should change title and description" time="4.517" />
  </testsuite>
- <testsuite name="E2E TEST - Fish:.Delete" timestamp="2018-01-14T22:08:30" hostname="localhost" time="2.5" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Fish:.Delete" name="should delete this fish" time="2.5" />
+ <testsuite name="E2E TEST - Fish:.Delete" timestamp="2018-03-30T16:28:43" hostname="localhost" time="2.995" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Fish:.Delete" name="should delete this fish" time="2.995" />
  </testsuite>
- <testsuite name="E2E TEST - Home:" timestamp="2018-01-14T22:08:33" hostname="localhost" time="1.282" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="E2E TEST - Home:" timestamp="2018-03-30T16:28:46" hostname="localhost" time="7.728" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="E2E TEST - Home:.About" timestamp="2018-01-14T22:08:33" hostname="localhost" time="0.464" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Home:.About" name="should have title and description" time="0.464" />
+ <testsuite name="E2E TEST - Home:.About" timestamp="2018-03-30T16:28:46" hostname="localhost" time="2.625" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Home:.About" name="should have title and description" time="2.625" />
  </testsuite>
- <testsuite name="E2E TEST - Home:.Contact" timestamp="2018-01-14T22:08:33" hostname="localhost" time="0.42" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Home:.Contact" name="should have title and link" time="0.42" />
+ <testsuite name="E2E TEST - Home:.Contact" timestamp="2018-03-30T16:28:49" hostname="localhost" time="2.667" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Home:.Contact" name="should have title and link" time="2.667" />
  </testsuite>
- <testsuite name="E2E TEST - Home:.Privacy" timestamp="2018-01-14T22:08:34" hostname="localhost" time="0.398" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Home:.Privacy" name="should have title and description" time="0.398" />
+ <testsuite name="E2E TEST - Home:.Privacy" timestamp="2018-03-30T16:28:51" hostname="localhost" time="2.436" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Home:.Privacy" name="should have title and description" time="2.436" />
  </testsuite>
- <testsuite name="E2E TEST - Lists:" timestamp="2018-01-14T22:08:34" hostname="localhost" time="13.382" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="E2E TEST - Lists:" timestamp="2018-03-30T16:28:54" hostname="localhost" time="14.111" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="E2E TEST - Lists:.Create" timestamp="2018-01-14T22:08:34" hostname="localhost" time="3.699" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Lists:.Create" name="should create a list" time="3.699" />
+ <testsuite name="E2E TEST - Lists:.Create" timestamp="2018-03-30T16:28:54" hostname="localhost" time="4.559" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Lists:.Create" name="should create a list" time="4.558" />
  </testsuite>
- <testsuite name="E2E TEST - Lists:.Index" timestamp="2018-01-14T22:08:38" hostname="localhost" time="3.616" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Lists:.Index" name="should list newest list first" time="3.616" />
+ <testsuite name="E2E TEST - Lists:.Index" timestamp="2018-03-30T16:28:58" hostname="localhost" time="2" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Lists:.Index" name="should list newest list first" time="2" />
  </testsuite>
- <testsuite name="E2E TEST - Lists:.Edit" timestamp="2018-01-14T22:08:41" hostname="localhost" time="3.407" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Lists:.Edit" name="should change title and description" time="3.407" />
+ <testsuite name="E2E TEST - Lists:.Edit" timestamp="2018-03-30T16:29:00" hostname="localhost" time="4.352" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Lists:.Edit" name="should change title and description" time="4.352" />
  </testsuite>
- <testsuite name="E2E TEST - Lists:.Delete" timestamp="2018-01-14T22:08:45" hostname="localhost" time="2.659" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Lists:.Delete" name="should delete this list" time="2.659" />
+ <testsuite name="E2E TEST - Lists:.Delete" timestamp="2018-03-30T16:29:05" hostname="localhost" time="3.2" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Lists:.Delete" name="should delete this list" time="3.2" />
  </testsuite>
- <testsuite name="E2E TEST - Species:" timestamp="2018-01-14T22:08:48" hostname="localhost" time="12.917" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="E2E TEST - Species:" timestamp="2018-03-30T16:29:08" hostname="localhost" time="14.994" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="E2E TEST - Species:.Species Create" timestamp="2018-01-14T22:08:48" hostname="localhost" time="3.398" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Species:.Species Create" name="should create a species" time="3.398" />
+ <testsuite name="E2E TEST - Species:.Species Create" timestamp="2018-03-30T16:29:08" hostname="localhost" time="5.038" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Species:.Species Create" name="should create a species" time="5.038" />
  </testsuite>
- <testsuite name="E2E TEST - Species:.Species Index" timestamp="2018-01-14T22:08:51" hostname="localhost" time="3.516" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Species:.Species Index" name="should list newest species first" time="3.5" />
+ <testsuite name="E2E TEST - Species:.Species Index" timestamp="2018-03-30T16:29:13" hostname="localhost" time="2.268" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Species:.Species Index" name="should list newest species first" time="2.266" />
  </testsuite>
- <testsuite name="E2E TEST - Species:.Species Edit" timestamp="2018-01-14T22:08:54" hostname="localhost" time="3.558" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Species:.Species Edit" name="should change title and description" time="3.558" />
+ <testsuite name="E2E TEST - Species:.Species Edit" timestamp="2018-03-30T16:29:15" hostname="localhost" time="4.474" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Species:.Species Edit" name="should change title and description" time="4.474" />
  </testsuite>
- <testsuite name="E2E TEST - Species:.Species Delete" timestamp="2018-01-14T22:08:58" hostname="localhost" time="2.445" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="E2E TEST - Species:.Species Delete" name="should delete this species" time="2.445" />
+ <testsuite name="E2E TEST - Species:.Species Delete" timestamp="2018-03-30T16:29:20" hostname="localhost" time="3.214" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="E2E TEST - Species:.Species Delete" name="should delete this species" time="3.214" />
  </testsuite>
 </testsuites>

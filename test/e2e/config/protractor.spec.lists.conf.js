@@ -22,7 +22,7 @@ exports.config = {
 	},
 	stackTrace: false,
 	//paths relative to this config file site/test/e2e/config|spec
-	specs: ['../spec/**/*.spec.js'], 
+	specs: ['../spec/Lists/lists.spec.js'],
 	onPrepare: function () {
 		//for require relative paths
 		global.requirePO = function (relativePath) {
